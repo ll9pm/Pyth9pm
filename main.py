@@ -18,7 +18,7 @@ async def main():
     """Creates an aiohttp session and fetches multiple URLs concurrently."""
     urls = list()
     apis =[
-        "A26JDPINkzJlZ9XXWIh82s1f7WZ8cdc6","fQmg2DYSvs8dXEDLNk2vLNUjeP6iRVhb"]
+        "XDIBuN45Gl7FkE3bIZ82RrgUIwDbWMya","tAStfvtf5XWmoEEPKOhpWXxy8hGjUX63"]
     ad="https://viidedss.com/dc/?blockID=387551"
     for api in apis:
         for _ in range(randint (3,5)):

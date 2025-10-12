@@ -41,7 +41,7 @@ for i in range(1):
 	
 	
 	for api in apis:
-		print(api)
+		
 	    thread = threading.Thread(target=send_request, args=(api,))
 	    threads.append(thread)
 	    thread.start()

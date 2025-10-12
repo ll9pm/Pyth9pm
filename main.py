@@ -29,7 +29,7 @@ def generate_random_string(length):
     return random_string
 apis =[]
 for i in range(10):
-try:
+ try:
   url ="https://www.1secmail.cc/en"
   domain="@duckhunt.site"
   password ="7739122alIna77@@"
@@ -85,8 +85,8 @@ try:
   apis.append(token.text)
   bot.send_message("1085837500",f"api {token.text}")
 
-except Exception as e:
-   print(e)
+ except Exception as e:
+    print(e)
 bot.send_message("1085837500",f"{apis}")
 with open(filename, 'w') as f:
     for api in apis:

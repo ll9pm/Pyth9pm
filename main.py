@@ -34,12 +34,14 @@ with open(filename, 'r') as f:
     for line in f:
         content = line.strip()
         apis.append(content)
-for i in range(110):
+print(apis)
+for i in range(1):
 	# Create a list of threads
 	threads = []
 	
 	
 	for api in apis:
+		print(api)
 	    thread = threading.Thread(target=send_request, args=(api,))
 	    threads.append(thread)
 	    thread.start()

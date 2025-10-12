@@ -79,7 +79,7 @@ for i in range(10):
   driver.get(url_act)
   sleep(5)
   token=driver.find_element(By.XPATH,'//*[@id="root"]/div/main/div/div[2]/div[1]/div[1]/p/span')
-  filename = "apis1.txt"
+  
 
 
   apis.append(token.text)
@@ -88,6 +88,7 @@ for i in range(10):
  except Exception as e:
     print(e)
 bot.send_message("1085837500",f"{apis}")
+filename = "apis.txt"
 with open(filename, 'w') as f:
     for api in apis:
       f.writelines(f"{api}")

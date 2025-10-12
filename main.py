@@ -3,12 +3,7 @@ import threading
 
 filename = "apis.text"
 
-apis =[]
-with open(filename, 'r') as f:
-    
-    for line in f:
-        content = line.strip()
-        apis.append(content)
+
 
 
 def send_request(api):
@@ -33,7 +28,12 @@ def send_request(api):
         conn.close()
 
 # Define your request details
-
+apis =[]
+with open(filename, 'r') as f:
+    
+    for line in f:
+        content = line.strip()
+        apis.append(content)
 for i in range(110):
 	# Create a list of threads
 	threads = []

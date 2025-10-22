@@ -4,7 +4,7 @@ import requests
 from random import randint
 
 TARGET_URL ="https://www.effectivegatecpm.com/uji4es8pqd?key=da098a0a0bd7ccec9dc42d9bbfcd0f40"#sca_esv=b9187f4daeb51a28&sxsrf=AE3TifPm9_qKH49AUTRmy8KUB3Zfi1pfKg%3A1752523657653&source=hp&ei=iWN1aPirJa_5i-gPnemUmQI&oq=myaiforyou.blogspot&gs_lp=EhFtb2JpbGUtZ3dzLXdpei1ocCITbXlhaWZvcnlvdS5ibG9nc3BvdEjUN1C0B1j6MnABeACQAQGYAZoMoAH3PaoBCTUtMy4xLjMuMbgBA8gBAPgBAvgBAZgCAaACbqgCD8ICBxAjGCcY6gKYA27xBXOEX6WXlLGzkgcDMC4xoAfdA7IHALgHAMIHAzYtMcgHZg&sclient=mobile-gws-wiz-hp"
-API_KEY ="dGgBKIuM9fgLUbnmkNcGSCrvinGPyLWe"
+API_KEY ="lCIbBHUVi5C1mnic4yTn7LFY62K6ww0f"
 SCRAPER_URL= 'https://api.webscrapingapi.com/v1'
 
 PARAMS= {

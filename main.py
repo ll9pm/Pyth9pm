@@ -1,39 +1,27 @@
-from selenium import webdriver
-import random
-import string
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from time import sleep
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from time import sleep
-import telebot
-token_api="6517080417:AAHQx2gxkQ5Sxs2GilTyCaOI4-jJZfIGaho"
-bot =telebot.TeleBot(token_api)
-def web_driver():
-    options = webdriver.ChromeOptions()
-    options.add_argument("--verbose")
-    options.add_argument('--no-sandbox')
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    options.add_argument("--window-size=2020,1680")
-    options.add_argument("--kiosk")
-    options.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Chrome(options=options)
-    return driver
+import requests
+i#mport json
+#import base64
+from random import randint
 
+TARGET_URL ="https://www.effectivegatecpm.com/uji4es8pqd?key=da098a0a0bd7ccec9dc42d9bbfcd0f40"#sca_esv=b9187f4daeb51a28&sxsrf=AE3TifPm9_qKH49AUTRmy8KUB3Zfi1pfKg%3A1752523657653&source=hp&ei=iWN1aPirJa_5i-gPnemUmQI&oq=myaiforyou.blogspot&gs_lp=EhFtb2JpbGUtZ3dzLXdpei1ocCITbXlhaWZvcnlvdS5ibG9nc3BvdEjUN1C0B1j6MnABeACQAQGYAZoMoAH3PaoBCTUtMy4xLjMuMbgBA8gBAPgBAvgBAZgCAaACbqgCD8ICBxAjGCcY6gKYA27xBXOEX6WXlLGzkgcDMC4xoAfdA7IHALgHAMIHAzYtMcgHZg&sclient=mobile-gws-wiz-hp"
+API_KEY ="dGgBKIuM9fgLUbnmkNcGSCrvinGPyLWe"
+SCRAPER_URL= 'https://api.webscrapingapi.com/v1'
 
-def generate_random_string(length):
-    characters = string.ascii_letters + string.digits
-    random_string = ''.join(random.choice(characters) for i in range(length))
-    return random_string
-apis =[]
-for i in range(10):
- try:
-  url ="https://www.1secmail.cc/en"
-  domain="@duckhunt.site"
-  password ="7739122alIna77@@"
-  rand_name = generate_random_string(15)
+PARAMS= {
+"api_key":API_KEY,
+"url":TARGET_URL,
+"country":"us",
+"render_js":1,
+"device":"desktop",
+"wait_for":randint(10000,25000),
+"wait_until":"networkidle0",
+#"screenshot":1,
+#"screenshot_options":'{"full_page ":"1"}',
+"js_instructions":'[{"action":"click","selector":"body","timeout":2000}]'
+
+}
+for i in range(1000):
+	res=requests.get(SCRAPER_URL,params=PARAMS)
   email =rand_name+domain
 
   driver= web_driver()

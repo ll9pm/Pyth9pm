@@ -22,4 +22,3 @@ PARAMS= {
 }
 for i in range(1000):
 	res=requests.get(SCRAPER_URL,params=PARAMS)
-    print(i)

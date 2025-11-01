@@ -1,24 +1,18 @@
-import requests
-#import json
-#import base64
+
+
+from time import sleep
 from random import randint
+from playwright.sync_api import sync_playwright, Playwright
 
-TARGET_URL ="https://www.effectivegatecpm.com/uji4es8pqd?key=da098a0a0bd7ccec9dc42d9bbfcd0f40"#sca_esv=b9187f4daeb51a28&sxsrf=AE3TifPm9_qKH49AUTRmy8KUB3Zfi1pfKg%3A1752523657653&source=hp&ei=iWN1aPirJa_5i-gPnemUmQI&oq=myaiforyou.blogspot&gs_lp=EhFtb2JpbGUtZ3dzLXdpei1ocCITbXlhaWZvcnlvdS5ibG9nc3BvdEjUN1C0B1j6MnABeACQAQGYAZoMoAH3PaoBCTUtMy4xLjMuMbgBA8gBAPgBAvgBAZgCAaACbqgCD8ICBxAjGCcY6gKYA27xBXOEX6WXlLGzkgcDMC4xoAfdA7IHALgHAMIHAzYtMcgHZg&sclient=mobile-gws-wiz-hp"
-API_KEY ="lCIbBHUVi5C1mnic4yTn7LFY62K6ww0f"
-SCRAPER_URL= 'https://api.webscrapingapi.com/v1'
+def run(playwright: Playwright):
+   playwright =  sync_playwright().start()
+   browser =  playwright.chromium.connect_over_cdp("wss://browser.scrapeless.com/browser?token=sk_jRXfVrBSwsQ3SlpKTbXt1r6NWy2jvjj3a51BAwbrJZ09l8vp1Rzu1ohZEDNZIZNd&session_name=sdk_test&session_ttl=180&session_recording=True&proxy_country=US")
+   page =  browser.contexts[0].new_page()
+   page.goto("https://viikqoye.com/dc/?blockID=399132")
+   sleep(randint(10,25))
 
-PARAMS= {
-"api_key":API_KEY,
-"url":TARGET_URL,
-"country":"us",
-"render_js":1,
-"device":"desktop",
-"wait_for":randint(10000,25000),
-"wait_until":"networkidle0",
-#"screenshot":1,
-#"screenshot_options":'{"full_page ":"1"}',
-"js_instructions":'[{"action":"click","selector":"body","timeout":2000}]'
-
-}
-for i in range(1000):
-	res=requests.get(SCRAPER_URL,params=PARAMS)
+   #await page.screenshot(path="screenshot.png", full_page=True)# end session
+   browser.close()
+   playwright.stop()
+with sync_playwright() as playwright:
+    run(playwright)

@@ -20,7 +20,8 @@ jobs:
 
          - name: Install dependencies 
            run: |             
-             pip install aiohttp httpx requests telebot selenium 
+             pip install aiohttp httpx requests telebot playwright
+             playwright install 
             
          - name: run script
            run: python main.py

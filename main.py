@@ -19,4 +19,7 @@ async def main():
     async with async_playwright() as playwright:
         await run(playwright)
 for i in range(100):
-  asyncio.run(main())
+  try:
+      asyncio.run(main())
+  except Exception as e :
+      print(e)

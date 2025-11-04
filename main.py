@@ -1,25 +1,65 @@
- 
-from random import randint
-# start browser, not to use 'with' context
-import asyncio
-from playwright.async_api import async_playwright, Playwright
+import json
+import requests
+import time,base64
+from random import  randint
+def send_request():
+     username = 'F8dXLU1ddOL3sEhG'
+     password = '27LXY4hxTVky9g2P'
+     host = 'geo.floppydata.com'
+     port = '10080'
 
-async def run(playwright: Playwright):
-    playwright = await async_playwright().start()
-    browser = await playwright.chromium.connect_over_cdp("wss://browser.scrapeless.com/browser?token=sk_m1UhOAh9CRNRRlvoFSpPrfQmJS4BTfZyq4vk7BM5CD5CJEXXD4HSD3hcTTggsQcn&session_name=sdk_test&session_ttl=180&session_recording=True&proxy_country=US")
-    page = await browser.contexts[0].new_page()
-    await page.goto("https://short.do/vvq8yH")
-    await asyncio.sleep(randint(10,25))
+     proxy = f'http://{username}:{password}@{host}:{port}'
 
-    #await page.screenshot(path="screenshot.png", full_page=True)# end session
-    await browser.close()
-    await playwright.stop()
+     token = "sk_89ArRqWZyiTDJinb0cPPR5wYNpz0YPIQZnwP1vd2E42uYRQZjP6EtgBGRNx1S2kP"
+     host = "api.scrapeless.com"
+     url="https://ahbhappinessishealth.blogspot.com/2025/11/blog-post.html?m=1"
+    # url="https://viikqoye.com/dc/?blockID=402513"
+     payload = {
+    "actor": "unlocker.webunlocker",
+    "proxy": {
+        "country": "US",
 
-async def main():
-    async with async_playwright() as playwright:
-        await run(playwright)
-for i in range(100):
-  try:
-      asyncio.run(main())
-  except Exception as e :
-      print(e)
+    },
+    "input": {
+        "url": url,
+        "redirect": True,
+        "jsRender": {
+            "enabled": True,
+            "waitUntil":"domcontentloaded",
+            "instructions": [
+
+
+       {"click": [ "#clickab", 11000]},
+         {"wait":randint(15000,30000)},
+
+        ],
+       "response": {
+                "type": "png",  # png or jpeg
+            }
+        },
+    }
+
+}
+     response = requests.post(
+        "https://api.scrapeless.com/api/v2/unlocker/request",
+        json=payload,
+       # proxies={"http": proxy, "https": proxy},
+
+        headers={
+            "x-api-token": token,
+            "Content-Type": "application/json"
+        },
+        timeout=60
+    )
+     print(response.text[0:200])
+     imag=response.json()["data"]
+     #image_data=base64.b64decode(imag)
+     #with open(f'output_image{randint(10000,9999999)}2.png','wb') as f:
+       # f.write(image_data)
+if __name__ == "__main__":
+    for i in range(1000):
+      print(i)
+      try:
+        send_request()
+      except Exception as e:
+        print(e)

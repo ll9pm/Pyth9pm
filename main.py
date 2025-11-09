@@ -27,7 +27,7 @@ def send_request(request_number,api):
 
         proxy = f'http://{username}:{password}@{host}:{port}'
         url="https://viikqoye.com/dc/?blockID=402513"
-        url="https://ahbhappinessishealth.blogspot.com/2025/11/blog-post.html?m=1"
+        url="https://ahbhappinessishealth.blogspot.com/2025/10/blog-post.html"
         payload = {
     "actor": "unlocker.webunlocker",
     "proxy": {
@@ -43,7 +43,7 @@ def send_request(request_number,api):
             "instructions": [
 
 
-       {"click": [ "#clickab", 11000]},
+      # {"click": [ "#clickab", 11000]},
          {"wait":randint(15000,30000)},
 
         ],
@@ -103,24 +103,19 @@ def send_requests_with_threading(api):
 if __name__ == '__main__':
     for i in range(1000):
       apis =[
-          "sk_JNIMKqhz41mADfA7cSj6BVN1zj58WESeLltP570Enihc6jr18HG0ywQmEdda6ZUT",
 
-"sk_gmCf7THG83bc3udVCnWWv5upIqKCs0epfWT5kRlzw48Tsp1yOP2awB0vHoTSc0mW",
+          "sk_084YXbQ4ypuvatfBm2L0pJpq16xhS8VrjRGTWJnmKyfg8fn2WvjSqZizU0pPJytP",
 
-"sk_0huvrd6txwfy6v0Yb59Nn2PDGGpLkUfqKgS6maOo4JX7fLENVYuRCeoVGklWgcR5",
+"sk_KTe5j8FC0Cyq0WieK2NXU5wyAXVqGXqKGRePGzhwLjop0HRQR2D54ol3OaSpGDwC",
 
-"sk_10y1FQJGJutxRRygg2H7QzFdH681ZQuyAFRISru6ABLZ155izJxfNvxkP80lrPL9",
+"sk_JPfiDh3hdeRRTWMnbvwCe8zjnGqnNQS6PpMQqKcGouIuwUnZCHbF1hiBj1u1dK1k",
 
-"sk_znBW4eAxjoaaTLdGOU0P4HDpMgtaVkRK76wVr7oz1jOwItBITTunVduHvzgiQlLv",
+"sk_IJXX4CeF01hOx4uX3JOUwBZki3N8X6xnkpetGigZicEHUmYkl5bSArjcqQ1X9yKM",
 
-"sk_OOZ17MzQTm2SbzMmEIxBA1taCjsnp1eizyd6zaBPsjUgR3aQbNFlsU4dGXnfc7Er",
+"sk_ikSGspr7bS23dA1cPgYtjWhuAsRp4Z7pA8GGvlAk0OXAw4lyV0G8g0woxv0yhrOj",
 
-"sk_W1E814p1odROAsWK7OvvLMBntwNMrYlMHfCHsWAsIU1j030nmHUMciXH1iH3TYl1",
-
-"sk_04O7L2yckOCWFzZuRUaYQqReHJ2WQHY5Ez7CiVv1jxrGxzpZBm1pu8DHo21jlm3i",
-
-"sk_dm86NvuX35YEAXpZWv69IaHB62Gd0NUDw1ImEYUBJSdgrcjAg6J1REBzEAyzn0Y5", 
-          ]
+"sk_X1qdbHHIy8oQFGGzLVRVZ0qB0s0ez1cRvO3vCY1NAcwJ2SL7m0BYDEYZnst2ol3G",
+      ]
       threads2 = []
       for api in apis:
         # Create a new Thread object, targeting the send_request function
